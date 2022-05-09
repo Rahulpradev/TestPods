@@ -1,0 +1,17 @@
+ desc "Create ipa"
+  lane :build do
+    # 1
+    update_code_signing_settings(
+  	use_automatic_signing: true,
+        path: "/Users/rahulpradev/rpradev_qburst/TestPods/TestPods.xcodeproj"
+)
+    # 2
+    increment_build_number
+    # 3
+    gym(scheme: "TestPods", workspace: "TestPods.xcworkspace", export_method: "ad-hoc", configuration: "Debug", clean: true)
+  end
+
+desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
