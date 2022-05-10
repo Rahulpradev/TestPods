@@ -21,6 +21,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Create ipa
 
+### testflight
+
+```sh
+[bundle exec] fastlane testflight
+```
+
+Testflight upload
+
 ### screenshot
 
 ```sh
@@ -28,6 +36,35 @@ Create ipa
 ```
 
 Take screenshots
+
+### upload
+
+```sh
+[bundle exec] fastlane upload
+```
+
+Upload to App Store
+
+### do_everything
+
+```sh
+[bundle exec] fastlane do_everything
+```
+
+Create app, take screenshots, build and upload to App Store
+
+----
+
+
+## iOS
+
+### ios create_app
+
+```sh
+[bundle exec] fastlane ios create_app
+```
+
+Create app on Apple Developer and App Store Connect sites
 
 ----
 

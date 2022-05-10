@@ -1,17 +1,41 @@
- desc "Create ipa"
+default_platform(:ios)
+
+platform :ios do
+# 1
+  desc "Create app on Apple Developer and App Store Connect sites"
+# 2
+  lane :create_app do
+# 3
+​    produce
+  end
+end 
+
+desc "Create ipa"
   lane :build do
     # 1
-    update_code_signing_settings(
-  	use_automatic_signing: true,
-        path: "/Users/rahulpradev/rpradev_qburst/TestPods/TestPods.xcodeproj"
-)
-    # 2
     increment_build_number
-    # 3
-    gym(scheme: "TestPods", workspace: "TestPods.xcworkspace", export_method: "ad-hoc", configuration: "Debug", clean: true)
+    # 2
+    gym
   end
 
+desc "Testflight upload"
+   lane :testflight do
+   upload_to_testflight
+end
 desc "Take screenshots"
   lane :screenshot do
     snapshot
+  end
+
+desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+
+desc “Create app, take screenshots, build and upload to App Store"
+  lane :do_everything do
+    create_app
+    screenshot
+    build
+    upload
   end

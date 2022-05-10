@@ -15,7 +15,8 @@ class TestPodsUITests: XCTestCase {
         setupSnapshot(app)
         app.launch()
         
-        snapshot("Home Screen")
-    }
+        app.buttons["Testing pod"].tap()
+        snapshot("button text yellow")
+      }
 
 }

@@ -1,10 +1,4 @@
-# 1
-scheme("TestPods")
-# 2
-output_directory("./fastlane/builds")
-# 3
-include_bitcode(false)
-# 4
-include_symbols(false)
-#5
-export_xcargs("-allowProvisioningUpdates")
+
+apple_dev_portal_id("rahul.pradev@qburst.com")
+itunes_connect_id("rahul.pradev@qburst.com")
+team_name ("QBurst Inc")
