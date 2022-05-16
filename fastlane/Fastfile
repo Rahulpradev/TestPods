@@ -1,6 +1,6 @@
 default_platform(:ios)
 
-platform :ios do
+
 # 1
   desc "Create app on Apple Developer and App Store Connect sites"
 # 2
@@ -8,7 +8,11 @@ platform :ios do
 # 3
 ​    produce
   end
-end 
+
+desc "Create adhoc build"
+  lane :build_adhoc do
+  gym(scheme: 'TestPods-QA', export_method: 'ad-hoc', output_directory: "./fastlane/builds/qa")
+  end
 
 desc "Create ipa"
   lane :build do
@@ -20,12 +24,15 @@ desc "Create ipa"
 
 desc "Testflight upload"
    lane :testflight do
-   upload_to_testflight
-end
+      build
+      pilot
+   end
+
 desc "Take screenshots"
   lane :screenshot do
     snapshot
   end
+
 
 desc "Upload to App Store"
   lane :upload do
@@ -33,9 +40,9 @@ desc "Upload to App Store"
   end
 
 desc “Create app, take screenshots, build and upload to App Store"
-  lane :do_everything do
+  lane :release_app do
     create_app
-    screenshot
     build
+    screenshot
     upload
   end

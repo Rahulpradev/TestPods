@@ -16,7 +16,7 @@ submission_information({
 ipa("./fastlane/builds/TestPods.ipa”)
 
 # 5
-submit_for_review(false)
+submit_for_review(true)
 
 # 6
 automatic_release(false)

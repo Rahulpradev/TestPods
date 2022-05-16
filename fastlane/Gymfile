@@ -1,8 +1,8 @@
 # 1
-scheme("TestPods")
+scheme("TestPods-Prod")
 # 2
-output_directory("./fastlane/builds")
+output_directory("./fastlane/builds/prod")
 # 3
-include_bitcode(false)
+include_bitcode(true)
 # 4
-include_symbols(false)
+include_symbols(true)

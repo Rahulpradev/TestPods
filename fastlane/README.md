@@ -13,6 +13,22 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
+### create_app
+
+```sh
+[bundle exec] fastlane create_app
+```
+
+Create app on Apple Developer and App Store Connect sites
+
+### build_adhoc
+
+```sh
+[bundle exec] fastlane build_adhoc
+```
+
+Create adhoc build
+
 ### build
 
 ```sh
@@ -45,26 +61,13 @@ Take screenshots
 
 Upload to App Store
 
-### do_everything
+### release_app
 
 ```sh
-[bundle exec] fastlane do_everything
+[bundle exec] fastlane release_app
 ```
 
 Create app, take screenshots, build and upload to App Store
-
-----
-
-
-## iOS
-
-### ios create_app
-
-```sh
-[bundle exec] fastlane ios create_app
-```
-
-Create app on Apple Developer and App Store Connect sites
 
 ----
 
