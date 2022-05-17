@@ -45,6 +45,14 @@ Create ipa
 
 Testflight upload
 
+### appcenter_release
+
+```sh
+[bundle exec] fastlane appcenter_release
+```
+
+Push to Appcenter
+
 ### screenshot
 
 ```sh

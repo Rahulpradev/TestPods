@@ -37,7 +37,7 @@ desc "Push to Appcenter"
     	owner_name: "bobby1212",
     	owner_type: "user",
     	app_name: "TestPods",
-	file: "../TestPods/fastlane/builds/qa/TestPods.ipa",
+	file: "/Users/rahulpradev/rpradev_qburst/TestPods/fastlane/builds/qa/TestPods.ipa",
 	notify_testers: true,
 	app_os: 'iOS'
       )
