@@ -11,6 +11,7 @@ default_platform(:ios)
 
 desc "Create adhoc build"
   lane :build_adhoc do
+  increment_build_number
   gym(scheme: 'TestPods-QA', export_method: 'ad-hoc', output_directory: "./fastlane/builds/qa")
   end
 
@@ -26,6 +27,20 @@ desc "Testflight upload"
    lane :testflight do
       build
       pilot
+   end
+
+desc "Push to Appcenter"
+   lane :appcenter_release do
+      build_adhoc
+      appcenter_upload(
+    	api_token: "e557771c21f62b97467b34d35f166deaf59f0f8b",
+    	owner_name: "bobby1212",
+    	owner_type: "user",
+    	app_name: "TestPods",
+	file: "../TestPods/fastlane/builds/qa/TestPods.ipa",
+	notify_testers: true,
+	app_os: 'iOS'
+      )
    end
 
 desc "Take screenshots"
