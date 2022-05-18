@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 
-# 1-
+# 1
   desc "Create app on Apple Developer and App Store Connect sites"
 # 2
   lane :create_app do
