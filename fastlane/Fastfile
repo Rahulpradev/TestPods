@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 
-# 1--
+# 1
   desc "Create app on Apple Developer and App Store Connect sites"
 # 2
   lane :create_app do
@@ -37,7 +37,7 @@ desc "Push to Appcenter"
     	owner_name: "bobby1212",
     	owner_type: "user",
     	app_name: "TestPods",
-	file: "../TestPods/fastlane/builds/qa/TestPods.ipa",
+	file: "/Users/rahulpradev/rpradev_qburst/TestPods/fastlane/builds/qa/TestPods.ipa",
 	notify_testers: true,
 	app_os: 'iOS'
       )

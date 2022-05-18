@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
-        Button("Testing pod") {
+        Button("Testing pods") {
             self.didTap = !self.didTap
             var nsDictionary: NSDictionary?
             if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
